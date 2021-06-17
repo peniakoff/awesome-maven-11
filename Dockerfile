@@ -1,4 +1,4 @@
-FROM maven:3.8.1-amazoncorretto-11
+FROM debian:stable
 LABEL maintainer="Tomasz Miller"
 
 ENV TZ=Europe/Warsaw
@@ -15,12 +15,13 @@ RUN apt-get update \
         g++ \
         git \
         locales \
+        maven \
         openssh-client \
         patch \
         uuid-runtime \
         unzip \
         jq \
-        python3.8 \
+        python3 \
     && rm -rf /var/lib/apt/lists/*
 
 # Default to UTF-8 file.encoding
